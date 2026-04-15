@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Store</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+    }
+
+    header {
+      background: #222;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cart {
+      background: white;
+      color: black;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 30px;
+    }
+
+    .card {
+      background: #ddd;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .title {
+      font-weight: bold;
+      margin: 10px 0 5px;
+    }
+
+    .price {
+      margin-bottom: 10px;
+    }
+
+    button {
+      background: black;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background: #444;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h2>My Store</h2>
+  <div class="cart">Cart: <span id="cart-count">0</span></div>
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1600180758890-6b94519a8ba6" alt="Shoes">
+    <div class="title">Shoes</div>
+    <div class="price">$50</div>
+    <button onclick="addToCart()">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1518544887874-7c91b7f2c9c9" alt="Watch">
+    <div class="title">Watch</div>
+    <div class="price">$80</div>
+    <button onclick="addToCart()">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad" alt="Headphones">
+    <div class="title">Headphones</div>
+    <div class="price">$40</div>
+    <button onclick="addToCart()">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8" alt="Laptop">
+    <div class="title">Laptop</div>
+    <div class="price">$900</div>
+    <button onclick="addToCart()">Add to Cart</button>
+  </div>
+
+</div>
+
+<script>
+  let cartCount = 0;
+
+  function addToCart() {
+    cartCount++;
+    document.getElementById("cart-count").innerText = cartCount;
+  }
+</script>
+
+</body>
+</html>
